@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import re
 import argparse
 import subprocess
@@ -28,7 +29,7 @@ def main():
                         answer = int(answer)
                         files = files[:answer - 1] + files[answer:]
                     except ValueError:
-                        if answer == 'all':
+                        if answer == 'all' or answer == '':
                             continue
                     for f in files:
                         subprocess.run(['trash-put', f])
